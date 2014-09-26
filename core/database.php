@@ -1,5 +1,4 @@
 <?php
-
 namespace interview;
 
 class Database {
@@ -7,7 +6,7 @@ class Database {
     protected $connected;
 
     public function __construct() {
-        $credentials = new Config_Database();
+        $credentials = new configDatabase();
 
         try {
             $this->link = new \PDO(
@@ -22,8 +21,6 @@ class Database {
             Logging::logDBErrorAndExit($e->getMessage());
         }
     }
-    //--------------------------------------------------------------------------
-
 
     public function insert($tableName, $columns, $data, $ignore = false)
     {
@@ -58,8 +55,6 @@ class Database {
             Logging::logDBErrorAndExit($e->getMessage());
         }
     }
-    //--------------------------------------------------------------------------
-
 
     public function updateOne($tableName, $column, $data, $where, $condition)
     {
@@ -81,8 +76,6 @@ class Database {
             Logging::logDBErrorAndExit($e->getMessage());
         }
     }
-    //--------------------------------------------------------------------------
-
 
     public function getArray($statement)
     {
@@ -99,5 +92,4 @@ class Database {
 
         return $results;
     }
-    //--------------------------------------------------------------------------
 }

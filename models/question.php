@@ -1,10 +1,8 @@
 <?php
-
 namespace interview;
 
 class Question
 {
-
     public $id;
     protected $name;
     public $text;
@@ -12,7 +10,7 @@ class Question
     public $created;
 
     protected $tableName = 'questions';
-    const      TABLENAME = 'questions';
+    const TABLENAME = 'questions';
 
     public function __construct($questionId, Database $db)
     {
@@ -26,8 +24,6 @@ class Question
         $this->answer  = $result[0]['answer'];
         $this->created = $result['created'];
     }
-    //--------------------------------------------------------------------------
-
 
     public static function getNameById($questionId, Database $db)
     {
@@ -36,8 +32,6 @@ class Question
 
         return $result[0]['name'];
     }
-    //--------------------------------------------------------------------------
-
 
     public static function getTextById($questionId, Database $db)
     {
@@ -46,8 +40,6 @@ class Question
 
         return $this->text;
     }
-    //--------------------------------------------------------------------------
-
 
     public static function getAnswerById($questionId, Database $db)
     {
@@ -56,8 +48,6 @@ class Question
 
         return $result[0]['answer'];
     }
-    //--------------------------------------------------------------------------
-
 
     public static function getCreatedById($questionId, Database $db)
     {
@@ -66,14 +56,12 @@ class Question
 
         return $result[0]['created'];
     }
-    //--------------------------------------------------------------------------
-
 
     public static function addQuestion($questionName, $questionText, $questionAnswer, Database $db)
     {
         $columns = array(
             'name',
-            'text'
+            'text',
             'answer'
         );
 
@@ -87,5 +75,4 @@ class Question
 
         return true;
     }
-    //--------------------------------------------------------------------------
 }
