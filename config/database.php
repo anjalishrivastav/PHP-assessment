@@ -3,7 +3,6 @@ namespace interview;
 
 class configDatabase
 {
-
     private $credentials = array(
         'host'     => 'localhost',
         'port'     => '',
