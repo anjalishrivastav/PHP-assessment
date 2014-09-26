@@ -33,8 +33,7 @@ class questionTest extends PHPUnit_Framework_TestCase
         $this->assertNotEmpty(\interview\Question::getAnswerById(1, new \interview\Database));
     }
 
-    public function testStaticGetCreatedById()
-    {
+    public function testStaticGetCreatedById() {
         $this->assertNotEmpty(\interview\Question::getCreatedById(1, new \interview\Database));
     }
 
